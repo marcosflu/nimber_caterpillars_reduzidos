@@ -11,10 +11,11 @@ def decimal_to_ternary(n):
     return ternary
 
 #def generate_caterpillars(k, max_n=999, output_file="caterpillars.txt"):
-def generate_caterpillars(k, max_n=550, output_file="cat_terc_reduzido.txt"):
+#def generate_caterpillars(k, max_n=999, output_file="cat_terc_reduzido.txt"):
+def generate_caterpillars(k, max_n=600, output_file="cat_terc_reduzido.txt"):
     """
-    Gera os caterpillars do tipo (n, k) para n variando de 3 até max_n e salva em um arquivo.
-    
+    Gera os caterpillars do tipo (n, k) para n variando de 3 até max_n e salva no arquivo.
+
     Parâmetros:
     k - Valor decimal que será convertido para base 3
     max_n - Número máximo de caterpillars a gerar (padrão: 999)
@@ -34,7 +35,7 @@ def generate_caterpillars(k, max_n=550, output_file="cat_terc_reduzido.txt"):
             caterpillar.extend(k_ternary)  # Insere os dígitos de k
             caterpillar.append(0)  # Adiciona o zero final
 
-            output_line = f"(n={n}, k={k}): {tuple(caterpillar)}\n"
+            output_line = f"({', '.join(map(str, caterpillar))})\n"
             file.write(output_line)  # Escreve no arquivo
         
     print(f"Caterpillars salvos em '{output_file}'!")
